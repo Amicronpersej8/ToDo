@@ -75,7 +75,9 @@ document.body.firstElementChild.append(thirdBlock)
 
 //add item todo
 function addTodo() {
+
     //todo blocks
+    //if (!inputText.value) return;
     const todoBlock = document.createElement('div')
     todoBlock.className = "todoBlock"
     thirdBlock.append(todoBlock)
@@ -86,11 +88,15 @@ function addTodo() {
     todoBlock.append(checkbox)
     checkbox.innerHTML = '✓'
 
+
     //todo text
     const todoText = document.createElement('div')
     todoText.className = "todoText"
     todoBlock.append(todoText)
-    todoText.innerHTML = 'Todo text'
+    todoText.innerHTML = ''
+    let inputText = document.querySelector('.enterTodo')
+    todoText.append(inputText.value)
+
 
     //todo item
     const todoBlockItem = document.createElement('div')
@@ -109,15 +115,35 @@ function addTodo() {
     todoBlockItem.append(date)
     date.innerHTML = 'Date'
 
-    //thirdBlock.append(todoBlock.cloneNode(true));
+    //delete todo block
+    closeItem.onclick = () => {
+        todoBlock.remove();
+    };
 
+    //checkbox click
+    checkbox.onclick = () => {
+        todoText.className = "todoText_1"
+        todoBlock.className = 'todoBlock_1'
+    };
 }
+
+//function delete last todo
 const addClick = document.querySelector('.add')
 addClick.addEventListener('click', addTodo)
-
-//delete todo
 function deleteLastTodo() {
     thirdBlock.lastChild.remove()
 }
 const deleteClick = document.querySelector('.deleteLast')
 deleteClick.addEventListener('click', deleteLastTodo)
+
+//function delete All todo
+const deleteAllclick = document.querySelector('.deleteAll')
+deleteAllclick.addEventListener('click', deleteAllTodo)
+function deleteAllTodo() {
+    while (thirdBlock.firstChild) {
+        thirdBlock.firstChild.remove()
+    }
+}
+
+
+
