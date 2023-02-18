@@ -152,15 +152,7 @@ html {
     align-items: center;
 }
 
-.todoBlock_1 {
-    margin: 20px auto;
-    height: 150px;
-    max-width: 500px;
-    border: 3px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.todoBlock_click {
     background-color: rgb(100, 100, 100);
 }
 
@@ -192,18 +184,8 @@ html {
     font-weight: 600;
     font-size: larger;
 }
-.todoText_1{
+.todoText_click{
     text-decoration: line-through;
-    width: 280px;
-    max-height: 60px;
-    border-radius: 10px;
-    border: none;
-    background-color: white;
-    text-align: center;
-    padding: 15px 0;
-    color: rgb(92, 92, 92);
-    font-weight: 600;
-    font-size: larger;
 }
 
 
